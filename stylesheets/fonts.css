@@ -1,0 +1,12 @@
+@font-face {
+    font-family:Gotham Nights;
+    src: local("Gotham Nights") ,url('fonts/gn.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family:CG;
+    src: local("Century Gothic") ,url('fonts/cg.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}

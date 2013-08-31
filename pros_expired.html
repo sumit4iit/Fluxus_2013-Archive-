@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en" xmlns:fb="http://ogp.me/ns/fb#">
+
+<head>
+    <link rel="shortcut icon" href="favicon.ico"/>
+	<meta charset="utf-8" />
+    <meta name="viewport" content="width=900" />
+	<meta name="keywords" content="fluxus , iiti , indian institute of technology indore, 2013 , cult fest, tech fest, home">
+	<meta name="description" content="Indian Institute of Technology Indore's Techno-Cultural Festival - 2013">
+	<meta name="author" content="Gagan and Sumit" />
+	<title>FLUXUS 2013</title>
+	<script src="scripts/jquery.min.js"></script>
+	
+</head>
+
+<style>
+
+		body{width:900px;margin:0px;}
+		div {margin:auto;}
+		h1{text-align:center;margin:0px 0px 10px 0px;}
+		p{margin:0px;}
+		#pros img{position:fixed;box-shadow:3px 3px 3px #000;}
+
+		img.us1{opacity:0.4;cursor:pointer;width:100px;}
+		img.us2{opacity:1;cursor:default;width:300px;}
+		img.us3{opacity:0.4;cursor:pointer;width:100px;}
+		
+		.arwpin{position:fixed;top:337px;left:440px;width:20px;opacity:0.4;}
+		div .imgdet {margin:auto;padding:10px;font-family:"Century Gothic";width:500px;background:rgba(255,255,255,0.4);color:#000000;display:none;position:fixed;top:350px;left:180px;text-align:justify;box-shadow:3px 3px 3px #000;}
+
+</style>
+
+<script>
+var nt=2;
+	
+function usw(x)
+	{
+		var lof = document.getElementById("us"+x).getAttribute('value');
+		if(lof == 1){var leftof = "100px";document.getElementById("us"+x).setAttribute('value','0');document.getElementById("us"+nt).setAttribute('value','1');}
+		else if(lof == 2){var leftof = "700px";document.getElementById("us"+x).setAttribute('value','0');document.getElementById("us"+nt).setAttribute('value','2');}
+		else {var leftof = "300px";}
+		//document.getElementById('pin').innerHTML = leftof;
+			
+		if(x!=nt){		
+			$("#us"+nt).animate( { 'top':'0px','left':leftof,'opacity':'0.4','width':'100px' },"fast");
+			document.getElementById("us"+nt).style.cursor = 'pointer';
+			document.getElementById("us"+nt).style.zIndex = '100';
+			$("#us"+x).animate( { 'top':'30px','left':'300px','opacity':'1','width':'300px' },"fast");
+			document.getElementById("us"+x).style.cursor = 'default';
+			document.getElementById("us"+x).style.zIndex = '0';
+			
+			$("#ps"+nt).slideUp("500");$("#ps"+x).slideDown("500");
+			
+			nt=x;
+		}
+	}
+
+</script>
+
+<body ondragstart="return false" onselectstart="return false">
+	<div id="pros">
+		
+		<img id="us1" class="us1" onclick="usw(1)" style="left:100px;z-index:100;" value="1" src="images/dc.jpg" alt="Dance"></img>
+		<img id="us2" class="us2"  onclick="usw(2)" style="left:300px;top:30px;" value="0" src="images/bp.jpg" alt="Rock Concert"></img>
+		<img id="us3" class="us3"  onclick="usw(3)" style="left:700px;z-index:100;" value="2" src="images/suc.jpg" alt="Stand Up Comedy"></img>
+		
+	</div>
+	<div id="pdet">
+		<img class="arwpin" src="arrow.png"></img>
+		
+		<div id="ps3" class="imgdet">
+					<h1>Stand-up Comedy</h1>
+					<p>Get ready to clutch your sides and tear up at a night of wit, humour and jest as the one and only, ________ forces you to forget all your pains and worries and double up with laughter. A night of giggles and guffaws beckons you...!!!</p>
+		</div>
+		
+		<div id="ps2" class="imgdet" style="display:block;">
+					<h1>Bands..Bang! Bang!! Boom!!!</h1>
+					<p>All the guys and girls in the crowd let your hair loose and head-bang to the rhythm of the beats as the music builds you up to a crescendo of fun and joy.</p>
+		</div>
+		
+		<div id="ps1" class="imgdet">
+					<h1>Dance Performance</h1>
+					<p>Get on the dance floor it's time to break free...the stage's set, the music's great, let your body follow the rhythms, and sway the night away. So let down your guard, shed your inhibitions and dance like it's the last night of your life!!!</p>
+		</div>
+	</div>
+	
+	<script src="scripts/jquery.min.js"></script>
+	<!--div id='pin'>Response here..</div-->
+</body>
+
+</html>

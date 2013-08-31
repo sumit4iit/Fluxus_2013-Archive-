@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en" xmlns:fb="http://ogp.me/ns/fb#">
+
+<head>
+    <link rel="shortcut icon" href="favicon.ico"/>
+	<meta charset="utf-8" />
+    <meta name="viewport" content="width=900" />
+	<meta name="keywords" content="fluxus , iiti , indian institute of technology indore, 2013 , cult fest, tech fest, home">
+	<meta name="description" content="Indian Institute of Technology Indore's Techno-Cultural Festival - 2013">
+	<meta name="author" content="Gagan and Sumit" />
+	<title>FLUXUS 2013</title>
+	<script src="scripts/jquery.min.js"></script>
+	
+</head>
+
+<style>
+		body{width:900px;margin:0px;cursor:default;}
+		div {margin:auto;padding:0px;border:7px solid rgba(0,0,0,0.4);width:800px;height:400px;overflow:hidden;}
+		
+		span {cursor:pointer;}
+		
+		img.ps{margin:0px;padding:0px;border:0px;}
+		
+		img.pp{margin:0px;padding:0px;border:0px;position:fixed;top:30px;left:817px;width:30px;cursor:pointer;display:none;}
+</style>
+
+<script>
+var nt = 1;
+var v = 2;
+var pos = '0px';
+var playpause = 0;
+var timeout;
+function usw(x)
+	{			
+		clearInterval(timeout);
+		switch(x){
+			case 1: pos='0px';break;
+			case 2: pos='-800px';break;
+			case 3: pos='-1600px';break;
+			default: break;
+			}
+		
+		if(x!=nt){
+			$("#ps").animate( { 'margin-left':pos },"fast");
+			document.getElementById("tk"+nt).setAttribute('src', 'images/dot.gif');
+			document.getElementById("tk"+x).setAttribute('src', 'images/dotfill.gif');
+			nt = x;
+			if(x==1){v=2;}else if(x==2){v=3;}else if(x=3){v=1;}
+			if(playpause == 0){timeout=setInterval(function(){autor()},3000);}
+			}
+	}
+
+function autor() {
+	usw(v);
+}
+
+</script>
+
+<body ondragstart="return false" onselectstart="return false" oncontextmenu="return false">
+	
+	<br>
+	<center>
+	<div><img id="ps" class="ps" src="images/d.jpg" alt="PRO-SHOWS"></img></div>
+	</center>
+	<br>
+	<center>
+	<span><img src="images/dotfill.gif" id="tk1" onclick="usw(1)" title="Indian Classical Night" /></span>&nbsp;&nbsp;
+	<span><img src="images/dot.gif" id="tk2" onclick="usw(2)" title="DJ NIGHT WITH DUALIST INQUIRY" /></span>&nbsp;&nbsp;
+	<span><img src="images/dot.gif" id="tk3" onclick="usw(3)" title="SONA MOHAPATRA LIVE IN CONCERT" /></span>
+	<br>
+	<p style="margin:0px;color:#FFFFFF;font-family:'Century Gothic'">(double-click to pause..)</p>
+	</center>
+	
+	<script>timeout=setInterval(function(){autor()},3000);</script>
+	<script src="scripts/jquery.min.js"></script>
+</body>
+
+</html>
