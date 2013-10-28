@@ -8,7 +8,7 @@
       <form method="post" action="verify.php">
         <?php
           require_once('recaptchalib.php');
-          $publickey = "6LfBzNsSAAAAANti2PuFgQIA5DLiLB-htAOIrG1Q"; // you got this from the signup page
+          $publickey = ""; // you got this from the signup page
           echo recaptcha_get_html($publickey);
         ?>
         <input type="submit" />
